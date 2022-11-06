@@ -28,7 +28,7 @@ public class player_movement : MonoBehaviour
         float VerInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.up * verspeed * VerInput * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+        if (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0f)
         {
             animator.SetTrigger("run");
         }
