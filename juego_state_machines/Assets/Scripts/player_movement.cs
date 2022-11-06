@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class player_movement : MonoBehaviour
 {
@@ -9,11 +10,14 @@ public class player_movement : MonoBehaviour
     int hp = 3;
     BoxCollider bc;
     Animator animator;
+    SpriteRenderer spr;
+    Vector3 movementDirection;
 
     void Start()
     {
         bc = GetComponent<BoxCollider>();
         animator = GetComponent<Animator>();
+        spr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -36,6 +40,15 @@ public class player_movement : MonoBehaviour
         if (!Input.anyKey)
         {
             animator.SetTrigger("idle");
+        }
+
+        if (HorInput < 0)
+        {
+            spr.flipX = true;
+        }
+        if (HorInput > 0)
+        {
+            spr.flipX = false;
         }
     }
 
