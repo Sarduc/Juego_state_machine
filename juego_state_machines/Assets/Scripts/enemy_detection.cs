@@ -8,7 +8,7 @@ public class enemy_detection : MonoBehaviour
     enemy_movement enemy;
     void Start()
     {
-        enemy = GetComponent<enemy_movement>();
+        enemy = GetComponentInParent<enemy_movement>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -18,11 +18,9 @@ public class enemy_detection : MonoBehaviour
             if (other.tag == "Player")
             {
                 Debug.Log("ES EL PLAYER");
-                enemy.SeePlayer();
+                enemy.GetComponentInParent<enemy_movement>().SeePlayer();
             }
         }
         
     }
-    /*void chasing();
-    if()*/
 }

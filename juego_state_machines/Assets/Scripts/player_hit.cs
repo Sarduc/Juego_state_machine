@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class player_hit : MonoBehaviour
 {
-    public Animator anim;
+    public Animator animator;
     public Transform attackPoint;
     public float attackRange;
     public LayerMask EnemyLayer;
+    int attackdamage = 1;
 
     void Update()
     {
@@ -20,12 +21,13 @@ public class player_hit : MonoBehaviour
 
     void melee()
     {
-        //anim.SetTrigger("Attack");
+        animator.SetTrigger("atack");
        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, EnemyLayer);
 
         foreach(Collider enemy in hitEnemies)
         {
             Debug.Log("PUM PIÑAZO");
+            enemy.GetComponent<enemy_movement>().TakeDamage(attackdamage);
         } 
     }
 
