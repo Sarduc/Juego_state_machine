@@ -9,11 +9,15 @@ public class enemy_movement : MonoBehaviour
     GameObject Player;
     public int speed = 6;
     bool yaTeVi = false;
+    public int hp = 1;
+    Animator anims;
+    SphereCollider spc;
     void Start()
     {
         bc = GetComponent<BoxCollider>();
         rb = GetComponent<Rigidbody>();
         Player = GameObject.FindGameObjectWithTag("Player");
+        spc = GetComponentInChildren<SphereCollider>();
     }
 
     void Update()
@@ -31,5 +35,26 @@ public class enemy_movement : MonoBehaviour
     public void SeePlayer()
     {
         yaTeVi = true;
+    }
+
+    void death()
+    {
+        //anims.Play(dying);
+        speed = 0;
+        yaTeVi = false;
+        bc.enabled = false;
+        spc.enabled = false;
+        Destroy(this.gameObject);
+
+    }
+
+    public void TakeDamage(int damage)
+    {
+        hp -= damage;
+
+        if (hp <= 0)
+        {
+            death();
+        }
     }
 }

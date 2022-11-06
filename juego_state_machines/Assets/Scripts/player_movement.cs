@@ -8,10 +8,12 @@ public class player_movement : MonoBehaviour
     int verspeed = 3;
     int hp = 3;
     BoxCollider bc;
+    Animator animator;
 
     void Start()
     {
         bc = GetComponent<BoxCollider>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -25,6 +27,16 @@ public class player_movement : MonoBehaviour
         transform.Translate(Vector3.right * speed * HorInput * Time.deltaTime);
         float VerInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.up * verspeed * VerInput * Time.deltaTime);
+
+        if (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0f)
+        {
+            animator.SetTrigger("run");
+        }
+
+        if (!Input.anyKey)
+        {
+            animator.SetTrigger("idle");
+        }
     }
 
     void hp_down()
