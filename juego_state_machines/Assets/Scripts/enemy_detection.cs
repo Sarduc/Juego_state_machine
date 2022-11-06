@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class enemy_detection : MonoBehaviour
 {
-    // Start is called before the first frame update
+    BoxCollider bc;
+    enemy_movement enemy;
     void Start()
     {
-        
+        enemy = GetComponent<enemy_movement>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
+        if (other != null)
+        {
+            if (other.tag == "Player")
+            {
+                Debug.Log("ES EL PLAYER");
+                enemy.SeePlayer();
+            }
+        }
         
     }
+    /*void chasing();
+    if()*/
 }
