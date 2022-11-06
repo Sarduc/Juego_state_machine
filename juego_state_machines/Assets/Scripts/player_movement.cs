@@ -5,15 +5,30 @@ using UnityEngine;
 public class player_movement : MonoBehaviour
 {
     int speed = 5;
-    bool sex = 2 
+    int verspeed = 3;
+    int hp = 3;
+    BoxCollider bc;
 
     void Start()
     {
-        
+        bc = GetComponent<BoxCollider>();
     }
 
     void Update()
     {
-        
+        movement();
+    }
+
+    void movement()
+    {
+        float HorInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector3.right * speed * HorInput * Time.deltaTime);
+        float VerInput = Input.GetAxis("Vertical");
+        transform.Translate(Vector3.up * verspeed * VerInput * Time.deltaTime);
+    }
+
+    void hp_down()
+    {
+        hp = hp - 1; 
     }
 }
