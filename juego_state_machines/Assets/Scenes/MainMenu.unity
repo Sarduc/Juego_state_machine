@@ -285,6 +285,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1430775b02ba9404faf0a63f68e569cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mainmenugameplay: {fileID: 8300000, guid: 933274333049e1749949db85f0568397, type: 3}
+  GameOver: {fileID: 8300000, guid: 1169a72efca8d9843a26919b1f282ef3, type: 3}
+  Victory: {fileID: 8300000, guid: 8396c30e52063234db8eaadb026d6114, type: 3}
+  Audioplayer: {fileID: 269929925}
 --- !u!82 &269929925
 AudioSource:
   m_ObjectHideFlags: 0

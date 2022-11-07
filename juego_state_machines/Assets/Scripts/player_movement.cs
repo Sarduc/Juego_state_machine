@@ -26,6 +26,7 @@ public class player_movement : MonoBehaviour
     {
         movement();
         clawCorrect();
+        amIDead();
 
         if (transform.position.y > 0f)
         {
@@ -89,5 +90,13 @@ public class player_movement : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         speed = 18;
 
+    }
+
+    private void amIDead()
+    {
+        if (hp <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }
