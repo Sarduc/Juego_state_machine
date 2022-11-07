@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Enemy_punching : MonoBehaviour
 {
-    // Start is called before the first frame update
+    SphereCollider spr;
     void Start()
     {
-        
+        spr = GetComponent<SphereCollider>(); 
     }
 
-    // Update is called once per frame
     void Update()
     {
         
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other != null)
+        {
+            if (other.tag == "Player")
+            {
+                GetComponentInParent<enemy_movement>().punch();
+            }
+        }
+
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class player_movement : MonoBehaviour
 {
-    int speed = 5;
+    int speed = 12;
     int verspeed = 3;
     int hp = 3;
     BoxCollider bc;
@@ -67,8 +67,18 @@ public class player_movement : MonoBehaviour
         }
     }
 
-    void hp_down()
+    public void hp_down()
     {
-        hp = hp - 1; 
+        hp = hp - 1;
+        animator.SetTrigger("hurt");
+        StartCoroutine(pain());
+    }
+
+    public IEnumerator pain()
+    {
+        speed = 0;
+        yield return new WaitForSeconds(0.5f);
+        speed = 6;
+
     }
 }
