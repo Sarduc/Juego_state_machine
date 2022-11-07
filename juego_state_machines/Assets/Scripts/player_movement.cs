@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class player_movement : MonoBehaviour
 {
-    int speed = 12;
-    int verspeed = 3;
-    int hp = 3;
+    int speed = 18;
+    int verspeed = 10;
+    public int hp = 10;
     BoxCollider bc;
     Animator animator;
     SpriteRenderer spr;
@@ -26,6 +26,15 @@ public class player_movement : MonoBehaviour
     {
         movement();
         clawCorrect();
+
+        if (transform.position.y > 0f)
+        {
+            transform.position = new Vector3(transform.position.x, 0f);
+        }
+        if (transform.position.y < -3.8f)
+        {
+            transform.position = new Vector3(transform.position.x, -3.8f);
+        }
     }
 
     void movement()
