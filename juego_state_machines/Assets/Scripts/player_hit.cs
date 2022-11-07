@@ -8,7 +8,6 @@ public class player_hit : MonoBehaviour
     public Transform attackPoint;
     public float attackRange;
     public LayerMask EnemyLayer;
-    int attackdamage = 1;
 
     void Update()
     {
@@ -27,7 +26,7 @@ public class player_hit : MonoBehaviour
         foreach(Collider enemy in hitEnemies)
         {
             Debug.Log("PUM PIÑAZO");
-            enemy.GetComponent<enemy_movement>().TakeDamage(attackdamage);
+            enemy.GetComponent<enemy_movement>().TakeDamage(1);
         } 
     }
 

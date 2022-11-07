@@ -11,7 +11,9 @@ public class player_movement : MonoBehaviour
     BoxCollider bc;
     Animator animator;
     SpriteRenderer spr;
-    Vector3 movementDirection;
+    [SerializeField] GameObject claw;
+    [SerializeField] Transform front;
+    [SerializeField] Transform back;
 
     void Start()
     {
@@ -23,6 +25,7 @@ public class player_movement : MonoBehaviour
     void Update()
     {
         movement();
+        clawCorrect();
     }
 
     void movement()
@@ -49,6 +52,18 @@ public class player_movement : MonoBehaviour
         if (HorInput > 0)
         {
             spr.flipX = false;
+        }
+    }
+
+    void clawCorrect()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            claw.transform.position = back.transform.position;
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            claw.transform.position = front.transform.position;
         }
     }
 
