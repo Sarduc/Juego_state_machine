@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2013206378868547968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.51, y: -0.57, z: -0.33008882}
-  m_LocalScale: {x: 3.3257267, y: 3.3257267, z: 3.3257267}
+  m_LocalScale: {x: 4.745957, y: 4.745957, z: 4.745957}
   m_Children:
   - {fileID: 2013206379592102095}
   - {fileID: 2013206380408086501}
@@ -52,7 +52,7 @@ MonoBehaviour:
   speed: 3
   PlayerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   attackPoint: {fileID: 2013206379046324867}
   attackRange: 1.8
 --- !u!65 &2013206378868547969
@@ -125,7 +125,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -7511879225377063964, guid: 73f13c28d38a9b645b8c86d4235b1bc3,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -223,8 +223,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3.6746745
-  m_Center: {x: 0.018138219, y: 0, z: 0}
+  m_Radius: 2.8898895
+  m_Center: {x: 0.032759394, y: 0, z: 0}
 --- !u!1 &2013206380408086500
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2013206380408086501}
   - component: {fileID: 2013206380408086522}
+  - component: {fileID: 172631375}
   m_Layer: 0
   m_Name: MeleeRange
   m_TagString: Untagged
@@ -269,3 +270,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5410092
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &172631375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013206380408086500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f9778136314d3479167417d1181f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

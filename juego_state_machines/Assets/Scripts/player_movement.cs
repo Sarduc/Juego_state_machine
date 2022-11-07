@@ -87,7 +87,7 @@ public class player_movement : MonoBehaviour
     {
         speed = 0;
         yield return new WaitForSeconds(0.5f);
-        speed = 6;
+        speed = 18;
 
     }
 }
