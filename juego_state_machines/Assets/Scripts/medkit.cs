@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class medkit : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            if (other != null)
+            {
+                other.GetComponent<player_movement>().hp = 10;
+                Destroy(this);
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
